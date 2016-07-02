@@ -1,4 +1,5 @@
-select ST_ABONENTS.C_NAME, count(*)
+select ST_ABONENTS.C_NAME as "ABONENT_NAME", 
+       count(*) as "CNT"
 from QRY_QUEUE, ST_ABONENTS, QRY_TYPE
 where to_char(C_IN_TIME, 'HH24') >= 9  and
       to_char(C_IN_TIME, 'HH24') <= 18 and
