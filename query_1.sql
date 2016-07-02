@@ -1,0 +1,7 @@
+select ST_ABONENTS.C_NAME as "ABONENTNAME", 
+       QRY_TYPE.C_NAME as "QRYTYPE", 
+       QRY_QUEUE.ID as "QRYID"
+from QRY_TYPE, ST_ABONENTS, QRY_QUEUE 
+where QRY_QUEUE.C_QRY_TYPE = QRY_TYPE.ID and 
+      QRY_TYPE.C_AB_REF = ST_ABONENTS.ID and
+      rownum <= 10;
